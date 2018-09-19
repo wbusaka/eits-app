@@ -1,0 +1,32 @@
+<template name="Eit_form">
+    
+    <div>
+        <form id="eit-form">
+             <input type="hidden" name='id'/>
+            <label for="firstName">First Name:</label>
+            <input type="text" name='firstName' required/>
+            <br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" required>
+            <br>
+            <label for="gender">Gender:</label>
+            <input type="radio" name='Gender' value="Male" required /> Male
+            &nbsp;&nbsp;
+            <input type="radio" name="Gender" value="Female" required/> Female
+            <br>
+            <label for="dob">Date of Birth:</label>
+            <br>
+            <input type="date" name='dob' required/><br>
+            <select name="Nationality">
+                {{#each Nationality}}
+                {{#if default}}
+                <option value="{{name}}" selected="true">{{name}}</option>
+                {{else}}
+                <option value="{{name}}">{{name}}</option>
+                {{/if}}
+                {{/each}}
+            </select><br>
+            <button>Submit</button>
+        </form>
+    </div>
+</template>

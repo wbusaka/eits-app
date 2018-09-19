@@ -1,0 +1,46 @@
+
+<body>
+    {{> loginButtons}}
+    <br>
+    {{#if currentUser}}
+    <div class="form-style-5">
+        {{>Eit_form}}
+    </div>
+    
+    <div>
+        <br>
+    </div>
+    
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Full Name</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Country</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each eitRows}}
+                <tr>
+                    <td><input type="checkbox" class="deleteCheckbox" value="{{_id}}"/></td>
+                    <td>{{firstName}} {{lastName}}</td>
+                    <td>{{Gender}}</td>
+                    <td>{{dob}}</td>
+                    <td>{{Nationality}}</td>
+                    <td><button id='{{_id}}' class="updateButton">update</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div><button id='delete'>Delete</button></div>
+
+    {{/if}}
+</body>
+
